@@ -1,108 +1,323 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<!doctype html><html lang="tr"><head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>genau·almanca — der/die/das Ezber Kartı (ücretsiz PDF)</title>
-<meta name="description" content="Artikel ezberlemekten yorulduysan: sonek artikeli söyler. 30+ gerçek kelime, renk kodlu + mini test. Gerçek bir öğretmenden ücretsiz tek-sayfa PDF.">
-<meta property="og:title" content="der/die/das — Ezber Kartı · genau·almanca">
-<meta property="og:description" content="Sonek artikeli söyler. 30+ kelime, renk kodlu, tek sayfa. Ücretsiz PDF.">
+<meta name="theme-color" content="#F7F0E6">
+<title>Genau Almanca — Almancayı her gün 1 dakikada öğren</title>
+<meta name="description" content="Türkçe konuşanlar için Almanca. Sıfırdan A2'ye, sade Türkçe anlatımla — kelime, cümle, telaffuz. Korkutmadan, ezberletmeden. Ücretsiz der/die/das ezber kartı.">
+<meta property="og:title" content="Genau Almanca">
+<meta property="og:description" content="Almancayı her gün 1 dakikada öğren. Sıfırdan A2'ye, sade Türkçe anlatımla.">
+<meta property="og:locale" content="tr_TR"><meta property="og:type" content="website">
+<script>document.documentElement.className+=' js'</script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
+/* ── Self-hosted brand fonts (no Google fetch, GDPR-friendly) ── */
+@font-face{font-family:"Montserrat";font-style:normal;font-display:swap;font-weight:100 900;src:url("fonts/montserrat-latin-wght-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Montserrat";font-style:normal;font-display:swap;font-weight:100 900;src:url("fonts/montserrat-latin-ext-wght-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"DM Sans";font-style:normal;font-display:swap;font-weight:100 900;src:url("fonts/dm-sans-latin-wght-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"DM Sans";font-style:normal;font-display:swap;font-weight:100 900;src:url("fonts/dm-sans-latin-ext-wght-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
 :root{
-  --bg:#F7F0E6; --paper:#FFFDF8; --ink:#2A211A; --muted:#716555;
-  --accent:#AC4F2A; --accentSoft:#F3E2D4; --line:#E7DCC9;
-  --der:#2F6DB5; --die:#B23B2E; --das:#5E6B3A;
+  --cream:#F7F0E6; --paper:#FEFDF8; --ink:#251E14; --muted:#696054;
+  --terracotta:#B04D26; --terracotta-deep:#8F3C1C; --peach:#F2DECE; --line:#E8DDCB;
+  --disp:"Montserrat",system-ui,sans-serif; --sans:"DM Sans",system-ui,sans-serif;
+  --warm:0 18px 40px -22px rgba(79,46,20,.45);
+  --warm-lg:0 30px 60px -28px rgba(79,46,20,.55);
+  --warm-sm:0 8px 20px -14px rgba(79,46,20,.40);
 }
-html,body{overflow-x:clip}
-html{scroll-behavior:smooth}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 body{
-  font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);
-  background:var(--bg);min-height:100vh;position:relative;
-  -webkit-font-smoothing:antialiased;
+  font-family:var(--sans);color:var(--ink);background:var(--cream);overflow-x:hidden;line-height:1.5;
+  background-image:radial-gradient(1100px 620px at 78% -8%,rgba(176,77,38,.10),transparent 60%),radial-gradient(900px 700px at -6% 12%,rgba(242,222,206,.55),transparent 55%);
+  background-attachment:fixed;
 }
-/* ambient warm glows — contained so they never cause overflow */
-.bg{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none}
-.bg span{position:absolute;border-radius:50%;filter:blur(70px)}
-.bg .g1{width:60vw;height:60vw;top:-22vw;left:-12vw;background:radial-gradient(circle,#F6C9A8 0%,transparent 68%);opacity:.55}
-.bg .g2{width:52vw;height:52vw;bottom:-24vw;right:-14vw;background:radial-gradient(circle,#E9B68C 0%,transparent 70%);opacity:.4}
-.wrap{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:38px 22px 56px}
-/* brand */
-.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;letter-spacing:-.01em}
-.brand .wm{flex:none;white-space:nowrap}
-.brand .dot{color:var(--accent)}
-.brand i{font-style:normal;font-weight:600;color:var(--muted);font-size:14px}
-.brand .live{margin-left:auto;flex:none;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--accentSoft);padding:6px 12px;border-radius:999px}
-.brand i{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-/* hero */
-.hero{margin-top:40px;animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
-.kick{font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-h1{font-weight:800;font-size:clamp(29px,8vw,44px);line-height:1.06;letter-spacing:-.03em;margin:14px 0 0}
-h1 .u{position:relative;white-space:nowrap}
-h1 .u::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.06em;height:.34em;background:var(--accent);opacity:.22;border-radius:4px;z-index:-1;transform:scaleX(0);transform-origin:left;animation:wipe .7s .5s cubic-bezier(.2,.7,.2,1) forwards}
-.lede{margin-top:18px;font-size:17px;line-height:1.55;color:var(--muted);font-weight:500}
-/* der/die/das color demo */
-.demo{display:flex;gap:9px;margin-top:24px;flex-wrap:wrap}
-.tag{font-weight:800;font-size:14px;padding:9px 15px;border-radius:12px;color:#fff;box-shadow:0 8px 22px rgba(42,33,26,.12)}
-.tag small{display:block;font-weight:600;font-size:11px;opacity:.85;margin-top:1px}
-.tag.der{background:var(--der)} .tag.die{background:var(--die)} .tag.das{background:var(--das)}
-/* offer card */
-.card{margin-top:30px;background:var(--paper);border:1px solid var(--line);border-radius:26px;
-  padding:30px 26px;box-shadow:0 26px 60px -18px rgba(42,33,26,.22);animation:rise .7s .12s both}
-.card .ico{font-size:30px}
-.card h2{font-weight:800;font-size:25px;letter-spacing:-.02em;margin-top:8px}
-.list{list-style:none;margin:18px 0 0;display:grid;gap:11px}
-.list li{display:flex;gap:11px;font-size:15px;font-weight:500;color:var(--ink);line-height:1.4}
-.list li>span:last-child{min-width:0;overflow-wrap:break-word}
-.list li b{color:var(--accent)}
-.check{flex:none;width:22px;height:22px;border-radius:50%;background:var(--accentSoft);color:var(--accent);
-  display:grid;place-items:center;font-size:13px;font-weight:800;margin-top:1px}
-/* CTA */
-.cta{margin-top:24px;display:block;text-decoration:none;text-align:center;
-  font-weight:800;font-size:17px;color:#FFF7EE;background:var(--accent);
-  padding:17px;border-radius:15px;box-shadow:0 16px 34px -8px rgba(172,79,42,.5);
-  transition:transform .15s ease, box-shadow .15s ease}
-.cta:hover{transform:translateY(-2px);box-shadow:0 22px 42px -8px rgba(172,79,42,.58)}
-.meta{margin-top:11px;text-align:center;font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.02em}
-/* footer */
-.foot{margin-top:34px;text-align:center;font-size:13.5px;color:var(--muted);line-height:1.7}
-.foot a{color:var(--accent);font-weight:700;text-decoration:none}
-.foot .soon{display:block;margin-top:8px;font-size:11.5px;opacity:.7}
-@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-@keyframes wipe{to{transform:scaleX(1)}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+/* film grain */
+body::after{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+::selection{background:rgba(176,77,38,.18);color:var(--ink)}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+@media(min-width:640px){.wrap{padding:0 32px}}
+
+/* ── Nav ── */
+header{position:fixed;inset-inline:0;top:0;z-index:40}
+nav{max-width:1120px;margin:14px auto 0;display:flex;align-items:center;justify-content:space-between;
+  border:1px solid rgba(232,221,203,.7);background:rgba(247,240,230,.72);backdrop-filter:blur(12px);
+  border-radius:999px;padding:9px 10px 9px 18px}
+.brandmark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.gbox{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--terracotta);color:var(--cream);font-family:var(--disp);font-weight:800;font-size:14px}
+.brandname{font-family:var(--disp);font-weight:800;font-size:17px;letter-spacing:-.02em;color:var(--ink)}
+.brandname b{color:var(--terracotta);font-weight:800}
+.navlinks{display:none;gap:28px}
+@media(min-width:880px){.navlinks{display:flex}}
+.ghost{font-family:var(--sans);font-weight:600;font-size:14.5px;color:rgba(37,30,20,.8);text-decoration:none;transition:color .2s}
+.ghost:hover{color:var(--terracotta)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-weight:700;
+  color:var(--cream);background:var(--terracotta);border:0;border-radius:999px;text-decoration:none;cursor:pointer;
+  box-shadow:var(--warm-sm);transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);background:var(--terracotta-deep);box-shadow:var(--warm)}
+.nav-cta{padding:10px 18px;font-size:14px}
+
+/* ── shared section bits ── */
+section{position:relative}
+.eyebrow{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta)}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--peach);border-radius:999px;padding:6px 16px;font-family:var(--sans);font-weight:600;font-size:14px;color:var(--ink)}
+h1,h2,h3{font-family:var(--disp);font-weight:800;letter-spacing:-.02em}
+.h2{font-size:clamp(2rem,4.5vw,3.1rem);line-height:1.03;letter-spacing:-.025em}
+.card{border:1px solid var(--line);background:var(--paper);border-radius:22px;padding:26px;box-shadow:var(--warm)}
+.lead-link{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-weight:700;font-size:15px;color:rgba(37,30,20,.8);text-decoration:none;transition:color .2s}
+.lead-link:hover{color:var(--terracotta)}
+
+/* ── Hero ── */
+.hero{padding-top:120px;padding-bottom:40px}
+@media(min-width:1024px){.hero{padding-top:150px}}
+.hero-grid{display:grid;gap:24px;grid-template-areas:"eb" "ti" "sc" "su" "ct"}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1.05fr .95fr;column-gap:40px;align-items:center;grid-template-areas:"eb sc" "ti sc" "su sc" "ct sc"}}
+.hero .eb{grid-area:eb}.hero .ti{grid-area:ti}.hero .su{grid-area:su}.hero .ct{grid-area:ct}.hero .sc{grid-area:sc}
+.hero h1{font-size:clamp(2.6rem,8vw,5.4rem);line-height:.97;letter-spacing:-.03em;max-width:15ch;text-wrap:balance}
+.hero .su{max-width:46ch;font-size:18px;line-height:1.6;color:var(--muted)}
+.hero .ct{display:flex;flex-wrap:wrap;align-items:center;gap:20px}
+.btn-lg{padding:15px 28px;font-size:15px}
+/* äöü scene */
+.scene{position:relative;display:grid;place-items:center;height:44vh;max-height:340px;width:100%;max-width:480px;margin:0 auto}
+@media(min-width:1024px){.scene{height:60vh;max-height:560px;max-width:none}}
+.scene .glyph{font-family:var(--disp);font-weight:800;font-size:34vw;line-height:.8;color:rgba(176,77,38,.16);user-select:none;animation:floaty 6s ease-in-out infinite}
+@media(min-width:1024px){.scene .glyph{font-size:13vw}}
+.scene::before{content:"";position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(176,77,38,.16),transparent 70%);filter:blur(30px)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* ── generic section padding ── */
+.sec{padding:88px 0}
+@media(min-width:640px){.sec{padding:104px 0}}
+.sec-head{max-width:42rem}
+.grid3{display:grid;gap:20px;margin-top:48px;grid-template-columns:1fr}
+@media(min-width:640px){.grid3{grid-template-columns:repeat(3,1fr)}}
+.grid4{display:grid;gap:20px;margin-top:48px;grid-template-columns:1fr}
+@media(min-width:640px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.grid4{grid-template-columns:repeat(4,1fr)}}
+.step-ico{display:grid;place-items:center;width:48px;height:48px;border-radius:16px;background:var(--peach);font-size:24px}
+.step h3{font-size:20px;margin-top:24px}
+.step p{margin-top:8px;font-size:15.5px;line-height:1.6;color:var(--muted)}
+.step .num{display:block;margin-top:24px;font-family:var(--disp);font-weight:800;font-size:14px;color:rgba(176,77,38,.4)}
+.cardhover{transition:transform .3s,box-shadow .3s}
+.cardhover:hover{transform:translateY(-6px);box-shadow:var(--warm-lg)}
+
+/* example lesson cards */
+.lesson{display:flex;flex-direction:column;gap:16px;height:100%}
+.lesson .top{display:flex;align-items:center;justify-content:space-between}
+.approx{display:inline-flex;align-items:center;border-radius:999px;background:var(--peach);padding:4px 10px;font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--terracotta-deep)}
+.lesson .de{font-family:var(--disp);font-weight:800;font-size:23px;line-height:1.15;color:var(--ink)}
+.lesson .tr{display:flex;align-items:center;gap:8px;margin-top:auto;border-top:1px solid var(--line);padding-top:16px;font-size:15px;font-weight:500;color:var(--muted)}
+
+/* ── PDF lead-magnet ── */
+.pdf-panel{position:relative;overflow:hidden;border-radius:32px;border:1px solid var(--line);background:var(--paper);box-shadow:var(--warm);padding:40px 28px}
+@media(min-width:640px){.pdf-panel{padding:56px}}
+.pdf-panel::before{content:"";position:absolute;right:-100px;top:-100px;width:320px;height:320px;border-radius:50%;background:rgba(176,77,38,.10);filter:blur(40px);pointer-events:none}
+.pdf-grid{position:relative;display:grid;gap:32px;align-items:center}
+@media(min-width:860px){.pdf-grid{grid-template-columns:1fr .85fr}}
+.pdf-grid h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.05}
+.pdf-list{list-style:none;margin:22px 0 0;display:grid;gap:12px}
+.pdf-list li{display:flex;gap:11px;font-size:15.5px;font-weight:500;color:var(--ink);line-height:1.45}
+.pdf-list b{color:var(--terracotta)}
+.chk{flex:none;width:22px;height:22px;border-radius:50%;background:var(--peach);color:var(--terracotta);display:grid;place-items:center;font-size:13px;font-weight:800;margin-top:1px}
+/* mock card preview */
+.pdf-mock{position:relative;border-radius:20px;border:1px solid var(--line);background:var(--cream);box-shadow:var(--warm-lg);padding:24px;transform:rotate(-2deg)}
+.pdf-mock .tag{display:flex;gap:9px;margin-bottom:16px;flex-wrap:wrap}
+.pdf-mock .t{font-family:var(--disp);font-weight:800;font-size:13px;padding:7px 12px;border-radius:10px;color:#fff}
+.pdf-mock .t small{display:block;font-weight:600;font-size:10px;opacity:.85}
+.pdf-mock .der{background:#2F6DB5}.pdf-mock .die{background:#B23B2E}.pdf-mock .das{background:#5E6B3A}
+.pdf-mock .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.pdf-mock .row b{font-family:var(--disp)}
+.pdf-mock .row.der b{color:#2F6DB5}.pdf-mock .row.die b{color:#B23B2E}.pdf-mock .row.das b{color:#5E6B3A}
+
+/* ── Why panel ── */
+.why-panel{position:relative;overflow:hidden;border-radius:32px;border:1px solid var(--line);background:var(--paper);box-shadow:var(--warm);padding:48px 28px}
+@media(min-width:640px){.why-panel{padding:56px}}
+.why-panel::before{content:"";position:absolute;right:-96px;top:-96px;width:288px;height:288px;border-radius:50%;background:rgba(176,77,38,.10);filter:blur(40px)}
+.why-grid{position:relative;display:grid;gap:40px}
+@media(min-width:1024px){.why-grid{grid-template-columns:1fr .9fr;align-items:center}}
+.why-grid p.body{margin-top:20px;max-width:52ch;font-size:18px;line-height:1.6;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(min-width:1024px){.stats{grid-template-columns:1fr;gap:16px}}
+.stat{border:1px solid var(--line);background:rgba(247,240,230,.6);border-radius:16px;padding:18px 16px;text-align:center}
+@media(min-width:1024px){.stat{display:flex;align-items:baseline;gap:16px;text-align:left}}
+.stat .v{font-family:var(--disp);font-weight:800;font-size:30px;color:var(--terracotta)}
+@media(min-width:1024px){.stat .v{font-size:36px}}
+.stat .l{margin-top:4px;font-size:13.5px;font-weight:500;color:var(--muted)}
+.soc{grid-column:1/-1;margin-top:4px;font-size:13px;font-style:italic;color:rgba(105,96,84,.8)}
+
+/* ── Newsletter ── */
+.nl{padding:40px 0 64px}
+.nl-panel{position:relative;overflow:hidden;border-radius:32px;background:var(--ink);color:var(--cream);padding:64px 28px;text-align:center}
+@media(min-width:640px){.nl-panel{padding:64px 56px}}
+.nl-panel::before{content:"";position:absolute;left:-80px;bottom:-30%;width:320px;height:320px;border-radius:50%;background:rgba(176,77,38,.30);filter:blur(48px)}
+.nl-inner{position:relative;max-width:42rem;margin:0 auto}
+.nl h2{color:var(--cream);font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.05;text-wrap:balance}
+.nl p.sub{margin:16px auto 0;max-width:44ch;font-size:17px;line-height:1.6;color:rgba(247,240,230,.7)}
+.nl form{display:flex;flex-direction:column;gap:12px;max-width:28rem;margin:36px auto 0}
+@media(min-width:640px){.nl form{flex-direction:row}}
+.nl input{width:100%;border:1px solid rgba(247,240,230,.15);background:rgba(247,240,230,.1);border-radius:999px;padding:14px 20px;font-family:var(--sans);font-size:15px;color:var(--cream)}
+.nl input::placeholder{color:rgba(247,240,230,.4)}
+.nl input:focus{outline:none;border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(176,77,38,.4)}
+.nl button{flex-shrink:0;border-radius:999px;background:var(--terracotta);color:var(--cream);border:0;padding:14px 28px;font-family:var(--sans);font-weight:700;font-size:15px;cursor:pointer;transition:transform .2s,background .2s}
+.nl button:hover{transform:translateY(-2px);background:var(--terracotta-deep)}
+.nl .consent{margin-top:16px;font-size:13px;color:rgba(247,240,230,.6)}
+.nl .done{display:none;margin:36px auto 0;align-items:center;justify-content:center;gap:8px;border-radius:999px;background:var(--terracotta);color:var(--cream);padding:14px 24px;font-weight:700;max-width:max-content}
+/* footer brand row */
+.footrow{margin-top:40px;display:flex;flex-direction:column;align-items:center;gap:16px;justify-content:space-between}
+@media(min-width:640px){.footrow{flex-direction:row}}
+.footbrand{display:flex;align-items:center;gap:10px}
+.footbrand .n{font-family:var(--disp);font-weight:800;font-size:15px;color:var(--ink)}
+.footbrand .t{font-size:12.5px;color:var(--muted)}
+
+/* ── scroll reveal (gated by html.js → if JS fails, content stays fully visible) ── */
+html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+html.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html.js .reveal{opacity:1!important;transform:none!important;transition:none}.scene .glyph{animation:none}*{scroll-behavior:auto!important}}
 </style></head>
 <body>
-<div class="bg"><span class="g1"></span><span class="g2"></span></div>
-<div class="wrap">
 
-  <div class="brand"><span class="wm">genau<span class="dot">·</span>almanca</span><i>TR→DE</i><span class="live">ücretsiz</span></div>
+<!-- NAV -->
+<header>
+  <nav class="wrap" style="padding-left:18px;padding-right:10px">
+    <a href="#top" class="brandmark"><span class="gbox">G</span><span class="brandname">Genau<b>Almanca</b></span></a>
+    <div class="navlinks">
+      <a href="#how" class="ghost">Nasıl çalışır</a>
+      <a href="#examples" class="ghost">Örnekler</a>
+      <a href="#pdf" class="ghost">Ücretsiz PDF</a>
+      <a href="#why" class="ghost">Neden</a>
+    </div>
+    <a href="#pdf" class="btn nav-cta">Ücretsiz PDF</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div class="kick">der · die · das</div>
-    <h1>Artikel ezberini <span class="u">bırak</span>.<br>Sonek sana söyler.</h1>
-    <p class="lede">-ung hep <b style="color:var(--die)">die</b>, -chen hep <b style="color:var(--das)">das</b>, meslek -er çoğu <b style="color:var(--der)">der</b>… Gerçek bir öğretmenin tek-sayfa ezber kartı. Telefonda dursun.</p>
-    <div class="demo">
-      <span class="tag der">der Lehrer<small>-er meslek</small></span>
-      <span class="tag die">die Zeitung<small>-ung</small></span>
-      <span class="tag das">das Mädchen<small>-chen</small></span>
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div class="eb reveal"><span class="pill">🇹🇷 → 🇩🇪 · A1–A2</span></div>
+      <h1 class="ti reveal">Almancayı her gün 1 dakikada öğren.</h1>
+      <div class="sc"><div class="scene"><span class="glyph" aria-hidden="true">äöü</span></div></div>
+      <p class="su reveal">Sıfırdan A2'ye, sade Türkçe anlatımla — kelime, cümle, telaffuz. Korkutmadan, ezberletmeden.</p>
+      <div class="ct reveal">
+        <a href="#pdf" class="btn btn-lg">Ücretsiz PDF'i al</a>
+        <a href="#how" class="lead-link">Nasıl çalışır <span aria-hidden="true">↓</span></a>
+      </div>
     </div>
   </section>
 
-  <section class="card">
-    <div class="ico">📑</div>
-    <h2>der / die / das — Ezber Kartı</h2>
-    <ul class="list">
-      <li><span class="check">✓</span><span><b>30+ gerçek kelime</b>, soneke göre gruplanmış</span></li>
-      <li><span class="check">✓</span><span>Renk kodu: <b style="color:var(--der)">der mavi</b> · <b style="color:var(--die)">die kırmızı</b> · <b style="color:var(--das)">das yeşil</b></span></li>
-      <li><span class="check">✓</span><span>Sonunda <b>mini test</b> — kendini dene</span></li>
-      <li><span class="check">✓</span><span>Tek sayfa · telefona kaydet · <b>%100 ücretsiz</b></span></li>
-    </ul>
-    <a class="cta" href="der-die-das-ezber-karti.pdf" download>der/die/das kartını indir →</a>
-    <p class="meta">PDF · tek sayfa · e-posta gerekmez</p>
+  <!-- HOW IT WORKS -->
+  <section id="how" class="sec wrap" style="scroll-margin-top:96px">
+    <div class="reveal">
+      <p class="eyebrow">Nasıl çalışır</p>
+      <h2 class="h2" style="margin-top:12px;max-width:18ch">Üç adım. Hepsi bir dakikada.</h2>
+    </div>
+    <div class="grid3">
+      <article class="card cardhover step reveal"><div class="step-ico">📅</div><h3>Her gün 1 ders</h3><p>1 dakika, telefonda, ayaküstü.</p><span class="num">01</span></article>
+      <article class="card cardhover step reveal" style="transition-delay:.1s"><div class="step-ico">🛒</div><h3>Gerçek senaryolar</h3><p>Markette, kafede, doktorda — hemen kullan.</p><span class="num">02</span></article>
+      <article class="card cardhover step reveal" style="transition-delay:.2s"><div class="step-ico">🗣️</div><h3>Türkçe-fonetik telaffuz</h3><p>≈ ile kabaca okunuş. Korkma, mükemmel olması şart değil.</p><span class="num">03</span></article>
+    </div>
   </section>
 
-  <p class="foot">
-    <a href="https://instagram.com/genaualmanca" target="_blank" rel="noopener">@genaualmanca</a> · gerçek bir öğretmenden, her gün Almanca · Takip et 🇩🇪
-    <span class="soon">Yakında: haftalık ipuçları için e-posta listesi (GDPR / double opt-in).</span>
-  </p>
+  <!-- EXAMPLES -->
+  <section id="examples" class="sec wrap" style="scroll-margin-top:96px">
+    <div class="reveal sec-head">
+      <p class="eyebrow">Örnek dersler</p>
+      <h2 class="h2" style="margin-top:12px">Bir bakışta öğreniyorsun</h2>
+      <p style="margin-top:16px;font-size:18px;color:var(--muted)">Her gün böyle bir kart. Kaydet, oku, kullan.</p>
+    </div>
+    <div class="grid4">
+      <article class="card cardhover lesson reveal"><div class="top"><span style="font-size:18px">🇩🇪</span><span class="approx">≈ iş hete gern</span></div><p lang="de" class="de">Ich hätte gern…</p><div class="tr"><span>🇹🇷</span>…istiyorum (kibar)</div></article>
+      <article class="card cardhover lesson reveal" style="transition-delay:.1s"><div class="top"><span style="font-size:18px">🇩🇪</span><span class="approx">≈ vas kostet das</span></div><p lang="de" class="de">Was kostet das?</p><div class="tr"><span>🇹🇷</span>Bu ne kadar?</div></article>
+      <article class="card cardhover lesson reveal" style="transition-delay:.2s"><div class="top"><span style="font-size:18px">🇩🇪</span><span class="approx">≈ vo finde iş</span></div><p lang="de" class="de">Wo finde ich…?</p><div class="tr"><span>🇹🇷</span>… nerede?</div></article>
+      <article class="card cardhover lesson reveal" style="transition-delay:.3s"><div class="top"><span style="font-size:18px">🇩🇪</span><span class="approx">≈ aynın şönen taag</span></div><p lang="de" class="de">Einen schönen Tag!</p><div class="tr"><span>🇹🇷</span>İyi günler!</div></article>
+    </div>
+  </section>
 
-</div></body></html>
+  <!-- PDF LEAD MAGNET -->
+  <section id="pdf" class="sec wrap" style="scroll-margin-top:96px">
+    <div class="pdf-panel reveal">
+      <div class="pdf-grid">
+        <div>
+          <p class="eyebrow">Ücretsiz indir</p>
+          <h2 style="margin-top:12px" class="h2">der / die / das — Ezber Kartı</h2>
+          <ul class="pdf-list">
+            <li><span class="chk">✓</span><span>Artikel ezberini bırak: <b>sonek söyler</b> (-ung→die, -chen→das…)</span></li>
+            <li><span class="chk">✓</span><span><b>30+ gerçek kelime</b>, renk kodlu + mini test</span></li>
+            <li><span class="chk">✓</span><span>Tek sayfa · telefona kaydet · <b>%100 ücretsiz</b></span></li>
+          </ul>
+          <div style="margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:16px">
+            <a href="der-die-das-ezber-karti.pdf" download class="btn btn-lg">der/die/das kartını indir →</a>
+            <span style="font-size:13px;color:var(--muted);font-weight:600">PDF · e-posta gerekmez</span>
+          </div>
+        </div>
+        <div class="pdf-mock" aria-hidden="true">
+          <div class="tag"><span class="t der">der<small>-er meslek</small></span><span class="t die">die<small>-ung</small></span><span class="t das">das<small>-chen</small></span></div>
+          <div class="row der"><span>der Lehrer</span><b>der</b></div>
+          <div class="row die"><span>die Zeitung</span><b>die</b></div>
+          <div class="row das"><span>das Mädchen</span><b>das</b></div>
+          <div class="row die"><span>die Wohnung</span><b>die</b></div>
+          <div class="row das" style="border-bottom:0"><span>das Brötchen</span><b>das</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" class="sec wrap" style="scroll-margin-top:96px">
+    <div class="why-panel reveal">
+      <div class="why-grid">
+        <div>
+          <p class="eyebrow">Neden işe yarıyor</p>
+          <h2 class="h2" style="margin-top:12px">Az ama her gün. Beyin böyle öğrenir.</h2>
+          <p class="body">Bir saatlik ders üç gün sonra unutulur. Bir dakikalık ders, her gün tekrarlanınca kalıcı olur. Genau Almanca tek bir alışkanlığa odaklanır: bugünün cümlesi. Baskı yok, seviye atlama yok — sadece akan, küçük, gerçek bir ilerleme.</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="v">1 dk</span><span class="l">günlük ders</span></div>
+          <div class="stat"><span class="v">A1–A2</span><span class="l">sıfırdan başlangıç</span></div>
+          <div class="stat"><span class="v">0</span><span class="l">ezber listesi</span></div>
+          <p class="soc">Topluluk sayıları yakında — ilk dalga öğrenciler katılıyor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER / FOOTER -->
+  <section class="nl wrap">
+    <div class="nl-panel reveal">
+      <div class="nl-inner">
+        <h2>Her gün 1 ders, kutuna gelsin</h2>
+        <p class="sub">E-postanı bırak; günün cümlesini, Türkçe anlatımıyla gönderelim. İstediğin an çıkarsın.</p>
+        <form id="nlform">
+          <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">E-posta adresin</label>
+          <input id="email" type="email" required placeholder="ornek@eposta.com" autocomplete="email">
+          <button type="submit">Beni ekle</button>
+        </form>
+        <p class="done" id="nldone"><span aria-hidden="true">🌱</span> Teşekkürler! E-posta listesi çok yakında açılıyor — ilk sen haber alacaksın.</p>
+        <p class="consent">Spam yok. Sadece günün dersi.</p>
+      </div>
+    </div>
+    <div class="footrow">
+      <div class="footbrand"><span class="gbox">G</span><div><p class="n">Genau Almanca</p><p class="t">Türkçe konuşanlar için Almanca — sıcak, sade, her gün.</p></div></div>
+      <a href="https://instagram.com/genaualmanca" target="_blank" rel="noopener" class="lead-link"><span aria-hidden="true">📸</span> @genaualmanca</a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+// scroll reveal
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(ents){ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e);});
+  // failsafe: if anything is still hidden after 2.5s, reveal it (never leave blank)
+  setTimeout(function(){els.forEach(function(e){e.classList.add('in');});},2500);
+})();
+// newsletter: honest — no fake subscribe; email isn't wired yet (Kit phase-2)
+document.getElementById('nlform').addEventListener('submit',function(e){
+  e.preventDefault();
+  this.style.display='none';
+  document.getElementById('nldone').style.display='inline-flex';
+});
+</script>
+</body></html>
