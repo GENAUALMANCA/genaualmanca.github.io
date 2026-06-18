@@ -1,0 +1,108 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>genau·almanca — der/die/das Ezber Kartı (ücretsiz PDF)</title>
+<meta name="description" content="Artikel ezberlemekten yorulduysan: sonek artikeli söyler. 30+ gerçek kelime, renk kodlu + mini test. Gerçek bir öğretmenden ücretsiz tek-sayfa PDF.">
+<meta property="og:title" content="der/die/das — Ezber Kartı · genau·almanca">
+<meta property="og:description" content="Sonek artikeli söyler. 30+ kelime, renk kodlu, tek sayfa. Ücretsiz PDF.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#F7F0E6; --paper:#FFFDF8; --ink:#2A211A; --muted:#716555;
+  --accent:#AC4F2A; --accentSoft:#F3E2D4; --line:#E7DCC9;
+  --der:#2F6DB5; --die:#B23B2E; --das:#5E6B3A;
+}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);
+  background:var(--bg);min-height:100vh;position:relative;
+  -webkit-font-smoothing:antialiased;
+}
+/* ambient warm glows — contained so they never cause overflow */
+.bg{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.bg span{position:absolute;border-radius:50%;filter:blur(70px)}
+.bg .g1{width:60vw;height:60vw;top:-22vw;left:-12vw;background:radial-gradient(circle,#F6C9A8 0%,transparent 68%);opacity:.55}
+.bg .g2{width:52vw;height:52vw;bottom:-24vw;right:-14vw;background:radial-gradient(circle,#E9B68C 0%,transparent 70%);opacity:.4}
+.wrap{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:38px 22px 56px}
+/* brand */
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;letter-spacing:-.01em}
+.brand .wm{flex:none;white-space:nowrap}
+.brand .dot{color:var(--accent)}
+.brand i{font-style:normal;font-weight:600;color:var(--muted);font-size:14px}
+.brand .live{margin-left:auto;flex:none;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--accentSoft);padding:6px 12px;border-radius:999px}
+.brand i{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* hero */
+.hero{margin-top:40px;animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.kick{font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+h1{font-weight:800;font-size:clamp(29px,8vw,44px);line-height:1.06;letter-spacing:-.03em;margin:14px 0 0}
+h1 .u{position:relative;white-space:nowrap}
+h1 .u::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.06em;height:.34em;background:var(--accent);opacity:.22;border-radius:4px;z-index:-1;transform:scaleX(0);transform-origin:left;animation:wipe .7s .5s cubic-bezier(.2,.7,.2,1) forwards}
+.lede{margin-top:18px;font-size:17px;line-height:1.55;color:var(--muted);font-weight:500}
+/* der/die/das color demo */
+.demo{display:flex;gap:9px;margin-top:24px;flex-wrap:wrap}
+.tag{font-weight:800;font-size:14px;padding:9px 15px;border-radius:12px;color:#fff;box-shadow:0 8px 22px rgba(42,33,26,.12)}
+.tag small{display:block;font-weight:600;font-size:11px;opacity:.85;margin-top:1px}
+.tag.der{background:var(--der)} .tag.die{background:var(--die)} .tag.das{background:var(--das)}
+/* offer card */
+.card{margin-top:30px;background:var(--paper);border:1px solid var(--line);border-radius:26px;
+  padding:30px 26px;box-shadow:0 26px 60px -18px rgba(42,33,26,.22);animation:rise .7s .12s both}
+.card .ico{font-size:30px}
+.card h2{font-weight:800;font-size:25px;letter-spacing:-.02em;margin-top:8px}
+.list{list-style:none;margin:18px 0 0;display:grid;gap:11px}
+.list li{display:flex;gap:11px;font-size:15px;font-weight:500;color:var(--ink);line-height:1.4}
+.list li>span:last-child{min-width:0;overflow-wrap:break-word}
+.list li b{color:var(--accent)}
+.check{flex:none;width:22px;height:22px;border-radius:50%;background:var(--accentSoft);color:var(--accent);
+  display:grid;place-items:center;font-size:13px;font-weight:800;margin-top:1px}
+/* CTA */
+.cta{margin-top:24px;display:block;text-decoration:none;text-align:center;
+  font-weight:800;font-size:17px;color:#FFF7EE;background:var(--accent);
+  padding:17px;border-radius:15px;box-shadow:0 16px 34px -8px rgba(172,79,42,.5);
+  transition:transform .15s ease, box-shadow .15s ease}
+.cta:hover{transform:translateY(-2px);box-shadow:0 22px 42px -8px rgba(172,79,42,.58)}
+.meta{margin-top:11px;text-align:center;font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+/* footer */
+.foot{margin-top:34px;text-align:center;font-size:13.5px;color:var(--muted);line-height:1.7}
+.foot a{color:var(--accent);font-weight:700;text-decoration:none}
+.foot .soon{display:block;margin-top:8px;font-size:11.5px;opacity:.7}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes wipe{to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head>
+<body>
+<div class="bg"><span class="g1"></span><span class="g2"></span></div>
+<div class="wrap">
+
+  <div class="brand"><span class="wm">genau<span class="dot">·</span>almanca</span><i>TR→DE</i><span class="live">ücretsiz</span></div>
+
+  <section class="hero">
+    <div class="kick">der · die · das</div>
+    <h1>Artikel ezberini <span class="u">bırak</span>.<br>Sonek sana söyler.</h1>
+    <p class="lede">-ung hep <b style="color:var(--die)">die</b>, -chen hep <b style="color:var(--das)">das</b>, meslek -er çoğu <b style="color:var(--der)">der</b>… Gerçek bir öğretmenin tek-sayfa ezber kartı. Telefonda dursun.</p>
+    <div class="demo">
+      <span class="tag der">der Lehrer<small>-er meslek</small></span>
+      <span class="tag die">die Zeitung<small>-ung</small></span>
+      <span class="tag das">das Mädchen<small>-chen</small></span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="ico">📑</div>
+    <h2>der / die / das — Ezber Kartı</h2>
+    <ul class="list">
+      <li><span class="check">✓</span><span><b>30+ gerçek kelime</b>, soneke göre gruplanmış</span></li>
+      <li><span class="check">✓</span><span>Renk kodu: <b style="color:var(--der)">der mavi</b> · <b style="color:var(--die)">die kırmızı</b> · <b style="color:var(--das)">das yeşil</b></span></li>
+      <li><span class="check">✓</span><span>Sonunda <b>mini test</b> — kendini dene</span></li>
+      <li><span class="check">✓</span><span>Tek sayfa · telefona kaydet · <b>%100 ücretsiz</b></span></li>
+    </ul>
+    <a class="cta" href="der-die-das-ezber-karti.pdf" download>der/die/das kartını indir →</a>
+    <p class="meta">PDF · tek sayfa · e-posta gerekmez</p>
+  </section>
+
+  <p class="foot">
+    <a href="https://instagram.com/genaualmanca" target="_blank" rel="noopener">@genaualmanca</a> · gerçek bir öğretmenden, her gün Almanca · Takip et 🇩🇪
+    <span class="soon">Yakında: haftalık ipuçları için e-posta listesi (GDPR / double opt-in).</span>
+  </p>
+
+</div></body></html>
