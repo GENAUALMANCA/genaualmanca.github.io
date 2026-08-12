@@ -102,6 +102,11 @@ nav{max-width:1140px;margin:14px auto 0;display:flex;align-items:center;justify-
 .nlinks a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:100%;background:var(--terracotta);transform:scaleX(0);transform-origin:0;transition:transform .25s}
 .nlinks a:hover{color:var(--terracotta)}
 .nlinks a:hover::after{transform:scaleX(1)}
+.navprice{display:inline-flex;align-items:center;padding:10px 15px;border:1px solid rgba(192,90,46,.3);border-radius:999px;background:var(--peach);font-family:var(--disp);font-weight:700;font-size:13.5px;color:var(--terracotta-deep);text-decoration:none;white-space:nowrap;transition:background .2s,transform .18s}
+.navprice:hover{background:#F0DAC5}
+.navprice:active{transform:scale(.97)}
+@media(min-width:900px){.navprice{display:none}}
+@media(max-width:560px){.bname{display:none}.btn.sm{padding:11px 15px;font-size:13.5px}}
 
 /* ===== ARC-REACTOR HERO (orb god-center + Tesla ignition + scrub morph --p) ===== */
 .cine{position:relative}
@@ -289,27 +294,21 @@ svg.icn{width:1.15em;height:1.15em;flex:none;vertical-align:-.18em;fill:none;str
 .jsum{margin-top:26px;text-align:center;font-family:var(--disp);font-weight:700;font-size:clamp(1.05rem,2.4vw,1.5rem)}
 .jsum .b{color:var(--terracotta)}
 
-/* offer */
-.tiers{display:grid;gap:18px;margin-top:40px;grid-template-columns:1fr}
-@media(min-width:820px){.tiers{grid-template-columns:1fr 1.06fr}}
-.tier{position:relative;border:1px solid var(--line);background:var(--paper);border-radius:24px;padding:30px 26px;box-shadow:var(--sh);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
-.tier:hover{transform:translateY(-5px);box-shadow:var(--sh-lg)}
-.tier.feat{border-color:var(--terracotta);box-shadow:0 26px 56px -28px rgba(192,90,46,.45)}
-.tier.feat::before{content:"";position:absolute;inset:0;border-radius:24px;padding:1px;pointer-events:none;
-  background:linear-gradient(120deg,transparent,rgba(204,154,63,.9),transparent);
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;background-size:200% 100%}
-@media(prefers-reduced-motion:no-preference){.tier.feat::before{animation:sweep 4s linear infinite}}
-@keyframes sweep{to{background-position:-200% 0}}
-.badge{position:absolute;top:-13px;left:26px;background:var(--terracotta);color:#fff;font-weight:700;font-size:11.5px;letter-spacing:.03em;padding:6px 13px;border-radius:999px;box-shadow:var(--sh)}
-.tier .lv{font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--terracotta)}
-.tier h3{font-size:23px;margin-top:7px}
-.tier .desc{margin-top:9px;font-size:14.5px;color:var(--muted);line-height:1.5}
-.tier .price{margin-top:18px;font-family:var(--disp);font-weight:700;font-size:30px}
-.tier .price small{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--muted)}
-.tier ul{list-style:none;margin:18px 0 22px;display:grid;gap:9px}
-.tier li{display:flex;gap:9px;font-size:14.5px;line-height:1.45}
-.tier li .ck{flex:none;width:19px;height:19px;border-radius:50%;background:var(--peach);color:var(--terracotta);display:grid;place-items:center;font-size:11px;font-weight:700;margin-top:1px}
-.tier .btn{margin-top:auto;width:100%}
+/* offer — fiyat merdiveni */
+.ladder{margin-top:36px;border:1px solid var(--line);background:var(--paper);border-radius:24px;box-shadow:var(--sh);overflow:hidden}
+.rung{position:relative;display:grid;grid-template-columns:1fr auto;column-gap:16px;align-items:center;padding:17px 22px;border-bottom:1px solid var(--line)}
+.rung:last-child{border-bottom:0}
+.rung .tempo{grid-column:1;grid-row:1;font-family:var(--disp);font-weight:700;font-size:17px;line-height:1.3}
+.rung .rnote{grid-column:1;grid-row:2;margin-top:3px;font-size:13.5px;color:var(--muted);line-height:1.45}
+.rung .amt{grid-column:2;grid-row:1/3;text-align:right;font-family:var(--disp);font-weight:700;font-size:clamp(25px,6.4vw,31px);line-height:1;white-space:nowrap}
+.rung .amt small{display:block;margin-top:6px;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--muted)}
+.rung.pick{background:var(--peach)}
+.rung.pick::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--terracotta)}
+.rung.pick .amt{color:var(--terracotta-deep)}
+.tag{display:inline-block;margin-left:9px;vertical-align:.14em;background:var(--terracotta);color:#fff;font-family:var(--sans);font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px}
+.lad-note{margin-top:18px;text-align:center;font-size:14.5px;color:var(--muted);max-width:56ch;margin-inline:auto;line-height:1.55}
+.lad-note b{color:var(--ink)}
+.offer-cta{margin-top:22px;display:flex;justify-content:center}
 .scar{margin-top:24px;text-align:center;font-size:14.5px;color:var(--muted)}
 .scar a{color:var(--terracotta);font-weight:700;text-decoration:none}
 .faq{margin-top:40px;max-width:760px;margin-inline:auto;display:grid;gap:10px}
@@ -471,6 +470,7 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.22,
     <div class="nlinks">
       <a href="#journey">Kurslar</a><a href="#how">Nasıl</a><a href="#premium">Premium</a><a href="#offer">Fiyatlar</a><a href="#pdf">Ücretsiz PDF</a>
     </div>
+    <a href="#offer" class="navprice">Fiyatlar</a>
     <a href="#offer" class="btn sm">İlk ders ücretsiz</a>
   </nav>
 </header>
@@ -521,7 +521,7 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.22,
           <p class="sub">Özel ders kalitesinde, birebir + küçük grup. 3 seviye: A1 → A2 → B1, her biri 1,5 ay. Almanya'da yaşamaya, çalışmaya ve sınava hazır ol.</p>
           <div class="cta">
             <a href="#offer" class="btn">İlk dersini ücretsiz al</a>
-            <a href="#journey" class="link">Kursları gör ↓</a>
+            <a href="#offer" class="link">Fiyatları gör ↓</a>
           </div>
           <p class="free"><svg class="icn"><use href="#i-gift"></use></svg> <b>İlk ders tamamen ücretsiz</b> — önce tanış, sonra karar ver.</p>
         </div>
@@ -558,55 +558,54 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.22,
 
   <!-- JOURNEY -->
   <section id="journey" class="sec wrap" style="scroll-margin-top:90px">
-    <div class="shead center rv"><p class="eyebrow">3 Seviyeli Yolculuk</p><h2 class="h2" style="margin-top:10px">Sıfırdan B1'e net bir hat.</h2><p class="lead" style="margin-top:14px;max-width:42ch;margin-inline:auto">Üç seviye, her biri 1,5 ay. Aylık ödersin, istediğin tempoda ilerlersin.</p></div>
+    <div class="shead center rv"><p class="eyebrow">3 Seviyeli Yolculuk</p><h2 class="h2" style="margin-top:10px">Sıfırdan B1'e net bir hat.</h2><p class="lead" style="margin-top:14px;max-width:42ch;margin-inline:auto">Üç seviye. Haftada 4–5 ders temposunda her seviye yaklaşık 1,5 ay. Aylık ödersin, tempoyu sen seçersin.</p></div>
     <div class="jrow">
       <div class="jstep rv"><div class="jdot">0</div><div class="lv"><b>Start</b><span class="tm">sıfır</span></div><p>Hiç Almanca yok. Buradan başlıyoruz — alfabeden ve ilk cümlelerden.</p></div>
       <div class="jstep rv"><div class="jdot">A1</div><div class="lv"><b>Seviye 1</b><span class="tm">1,5 ay</span></div><p>Kendini tanıt, günlük hayatta konuş: alışveriş, randevu, yön sorma.</p></div>
       <div class="jstep rv"><div class="jdot">A2</div><div class="lv"><b>Seviye 2</b><span class="tm">1,5 ay</span></div><p>Geçmişten ve planlarından bahset, telefonda anlaş, resmi yazışmaya başla.</p></div>
       <div class="jstep fin rv"><div class="jdot">B1</div><div class="lv"><b>Seviye 3</b><span class="tm">1,5 ay</span></div><p>Fikrini savun, iş ve okul hayatını yürüt. B1 = oturum, iş ve sınav seviyesi.</p></div>
     </div>
-    <p class="jsum rv">Toplam <span class="b">3 seviye</span> × 1,5 ay = <span class="b">4,5 ayda</span> B1.</p>
+    <p class="jsum rv">Toplam <span class="b">3 seviye</span> × 1,5 ay = <span class="b">4,5 ayda</span> B1.<br><span style="font-family:var(--sans);font-weight:600;font-size:14px;color:var(--muted)">haftada 4–5 ders temposunda</span></p>
   </section>
 
   <!-- OFFER -->
   <section id="offer" class="sec wrap" style="scroll-margin-top:90px">
-    <div class="shead center rv"><p class="eyebrow">Fiyatlar</p><h2 class="h2" style="margin-top:10px">İlk ders ücretsiz. Sonra karar ver.</h2><p class="lead" style="margin-top:14px">Ders başı 700 TL · aylık peşin · toplu derste indirim. İstediğin tempoyu seç.</p></div>
-    <div class="tiers">
-      <article class="tier rv rl">
-        <span class="lv">Haftada 3 ders · aylık</span>
-        <h3>Düzenli Tempo</h3>
-        <p class="desc">İstikrarlı ilerleme. Birebir + küçük grup, Premium hesap dahil.</p>
-        <div class="price">7.000 TL<small>/ay</small></div>
-        <ul>
-          <li><span class="ck"><svg class="icn"><use href="#i-check"></use></svg></span>Haftada 3 ders (birebir + grup)</li>
-          <li><span class="ck"><svg class="icn"><use href="#i-check"></use></svg></span>Premium hesap (kaynak + özel video)</li>
-          <li><span class="ck"><svg class="icn"><use href="#i-check"></use></svg></span>İlk ders ücretsiz · toplu indirim</li>
-        </ul>
-        <a href="mailto:genaualmanca@gmail.com?subject=Genau%20Almanca%20-%203%20ders%20program%C4%B1" class="btn ghost">İlk dersini ücretsiz al</a>
-      </article>
-      <article class="tier feat rv rr">
-        <span class="badge">EN HIZLI · B1 GARANTİLİ</span>
-        <span class="lv">Haftada 4 ders · aylık</span>
-        <h3>Garantili B1</h3>
-        <p class="desc">B1 garantisi için önerdiğimiz tempo. En hızlı yol — ders başı da daha uygun.</p>
-        <div class="price">9.000 TL<small>/ay</small></div>
-        <ul>
-          <li><span class="ck"><svg class="icn"><use href="#i-check"></use></svg></span>Haftada 4 ders — garanti temposu</li>
-          <li><span class="ck"><svg class="icn"><use href="#i-check"></use></svg></span>Premium hesap (tüm seviyeler)</li>
-          <li><span class="ck"><svg class="icn"><use href="#i-check"></use></svg></span>Ders başı daha uygun · ilk ders ücretsiz</li>
-          <li><span class="ck"><svg class="icn"><use href="#i-check"></use></svg></span>4,5 ayda sıfırdan B1'e</li>
-        </ul>
-        <a href="mailto:genaualmanca@gmail.com?subject=Genau%20Almanca%20-%20B1%20garantili%20program" class="btn">Yerini ayırt</a>
-      </article>
+    <div class="shead center rv"><p class="eyebrow">Fiyatlar</p><h2 class="h2" style="margin-top:10px">İlk ders ücretsiz. Sonra karar ver.</h2><p class="lead" style="margin-top:14px">Ders başı <b>750 TL</b>. Haftada kaç ders alırsan ders başı o kadar düşer — aylık peşin, Premium hesap her tempoda dahil.</p></div>
+
+    <div class="ladder rv">
+      <div class="rung">
+        <p class="tempo">Haftada 1–2 ders</p>
+        <p class="amt">750 TL<small>ders başı</small></p>
+        <p class="rnote">Kendi temponda. 4 haftada 8 ders ≈ 6.000 TL.</p>
+      </div>
+      <div class="rung">
+        <p class="tempo">Haftada 3 ders</p>
+        <p class="amt">700 TL<small>ders başı</small></p>
+        <p class="rnote">Düzenli tempo. 4 haftada 12 ders ≈ 8.400 TL.</p>
+      </div>
+      <div class="rung pick">
+        <p class="tempo">Haftada 4 ders <span class="tag">Önerilen</span></p>
+        <p class="amt">600 TL<small>ders başı</small></p>
+        <p class="rnote">Bir seviyeyi yaklaşık 1,5 ayda bitirirsin. 4 haftada 16 ders ≈ 9.600 TL.</p>
+      </div>
+      <div class="rung">
+        <p class="tempo">Haftada 5 ders</p>
+        <p class="amt">550 TL<small>ders başı</small></p>
+        <p class="rnote">En hızlı yol, ders başı en uygun. 4 haftada 20 ders ≈ 11.000 TL.</p>
+      </div>
     </div>
+
+    <p class="lad-note rv">Bir seviye (A1 · A2 · B1) <b>haftada 4–5 ders</b> temposunda yaklaşık <b>1,5 ay</b> sürer. Daha az ders alırsan aynı yolu daha uzun sürede yürürsün.</p>
+    <div class="offer-cta rv"><a href="mailto:genaualmanca@gmail.com?subject=Genau%20Almanca%20-%20ucretsiz%20ilk%20ders" class="btn">İlk dersini ücretsiz al</a></div>
+
     <p class="scar rv">Kontenjan tükeniyor — her dönem az sayıda öğrenci alıyoruz. <b style="color:var(--ink)">Şimdiden konuşalım:</b> <a href="mailto:genaualmanca@gmail.com">genaualmanca@gmail.com</a> · <a href="https://ig.me/m/genaualmanca" target="_blank" rel="noopener">DM @genaualmanca</a></p>
 
     <div class="faq">
       <details class="rv"><summary>Hiç Almanca bilmiyorum, sıfırdan mı başlıyoruz?</summary><p>Evet, tam olarak sıfırdan. A1, hiç bilmeyen biri için tasarlandı; alfabeden ve ilk cümlelerden başlıyoruz.</p></details>
-      <details class="rv"><summary>4,5 ay gerçekten yeterli mi?</summary><p>Plan, haftada düzenli derse ve ödevlere katıldığın varsayımıyla kurulu. Düzenli ilerlersen B1 ulaşılabilir bir hedef; sihir değil, net bir sistem.</p></details>
+      <details class="rv"><summary>4,5 ay gerçekten yeterli mi?</summary><p>Plan, <b>haftada 4–5 ders</b> temposuna ve ödevlere göre kurulu — bu tempoda her seviye yaklaşık 1,5 ay sürer. Daha az ders alırsan aynı yolu daha uzun sürede yürürsün; sihir değil, net bir sistem.</p></details>
       <details class="rv"><summary>Birebir mi, grup mu?</summary><p>İkisi birden: kişisel ilerlemen için birebir, gerçek konuşma pratiği için küçük grup. İkisinin dengesi en hızlı yol.</p></details>
       <details class="rv"><summary>Dersi kaçırırsam ne olur?</summary><p>Telafi edilebilir ama üst üste olmaz: bir hafta kaçırırsan ikinci hafta kaçırmaman gerekir (telafi en geç iki haftada bir). Ayrıca Premium videolarla konuyu hemen kapatırsın.</p></details>
-      <details class="rv"><summary>Ödeme nasıl?</summary><p>Aylık peşin: haftada 3 ders 7.000 TL/ay, haftada 4 ders 9.000 TL/ay (ders başı daha uygun). Ders başı 700 TL; aylık/toplu pakette indirimli. İlk deneme dersi ücretsiz.</p></details>
+      <details class="rv"><summary>Ödeme nasıl?</summary><p>Aylık peşin. Ders başı 750 TL; haftada 3 ders alırsan 700 TL, 4 ders alırsan 600 TL, 5 ders alırsan 550 TL'ye düşer. İlk deneme dersi ücretsiz.</p></details>
       <details class="rv"><summary>B1 bitince ne işime yarayacak?</summary><p>B1, Almanya'da oturum, birçok iş başvurusu ve çoğu dil sınavı için aranan seviyedir. Günlük hayatı tek başına yürütebilirsin.</p></details>
     </div>
 
